@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4d97c5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Apps">
+    <children>
+        <AnchorPane layoutY="128.0" prefHeight="272.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <TextArea fx:id="textttttt" prefHeight="272.0" prefWidth="600.0" />
+         </children></AnchorPane>
+        <Button fx:id="buttonToHome" layoutX="521.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Ordered" />
+        <Button fx:id="buttonToServices" layoutX="442.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Services" />
+        <Button fx:id="buttonToOpenNewAncho" layoutX="565.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="27.0" text="≡">
+            <font>
+                <Font size="10.0" />
+            </font>
+        </Button>
+        <AnchorPane fx:id="anchorpaneToNewButtons" layoutX="426.0" prefHeight="400.0" prefWidth="174.0" style="-fx-background-color: #fff4c1;" visible="false">
+            <children>
+                <Button fx:id="buttonToAboutClinic" layoutX="14.0" layoutY="57.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="About Clinic" />
+                <Button fx:id="buttonToReviews" layoutX="14.0" layoutY="88.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Send message" />
+                <Button fx:id="buttonToContacts" layoutX="14.0" layoutY="120.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Contacts" />
+                <Button fx:id="buttonToLogOut" layoutX="112.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Log out" />
+            <Button fx:id="buttonToCloseNewAncho" layoutX="137.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="27.0" text="Button" />
+            </children>
+        </AnchorPane>
+        <Label layoutX="86.0" layoutY="14.0" prefHeight="25.0" prefWidth="329.0" style="-fx-background-color: white;" text="Dental Center &quot;Aibolit&quot;. Almaty city, zherdin birzherova 24B" />
+        <Label layoutX="86.0" layoutY="47.0" prefHeight="17.0" prefWidth="329.0" style="-fx-background-color: white;" text="Call centre 234-42-22  st.Tchaikovsky, 15a 245-44-21" />
+        <ImageView fitHeight="68.0" fitWidth="75.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@h.jpg" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
