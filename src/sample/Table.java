@@ -60,12 +60,15 @@ public class Table {
             e.printStackTrace();
         }
         buttonToBackInOerdered.setOnAction(event -> {
-            change(buttonToBackInOerdered, "App");
+            change(buttonToBackInOerdered);
+            change("App");
         });
 
     }
-    public void change(Button button, String url) {
+    public void change(Button button) {
         button.getScene().getWindow().hide();
+    }
+    public void change( String url){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/sample/" + url + ".fxml"));
         try {
@@ -77,5 +80,5 @@ public class Table {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
-    }
+}
 }

@@ -72,8 +72,8 @@ public class Order implements Inter{
         buttonToOrderInOrder.setOnAction(event -> {
             String id = textToService.getText();
             String time = textToTime.getText();
-            String n="";
-            int price=0;
+            String n = "";
+            int price = 0;
             try {
                 Connection dbConnection;
                 Class.forName("com.mysql.jdbc.Driver");
@@ -89,11 +89,32 @@ public class Order implements Inter{
                 ResultSet resultSet = statement.executeQuery("SELECT *from service");
                 while (resultSet.next()) {
                     int idd = resultSet.getInt(1);
-                    if(idd == Integer.parseInt(id)){
+                    if (idd == Integer.parseInt(id) && textToService.getText().equals("") == false) {
                         n = resultSet.getString(2);
                         price = resultSet.getInt(3);
+                        String ds = "You signed up successfully";
+                        JOptionPane.showMessageDialog(null, ds, "Congratulate!", JOptionPane.PLAIN_MESSAGE);
+                        change(buttonToOrderInOrder, "ser");
+                        String insert = "INSERT INTO " + "doc" + " (" +
+                                "name" + "," + "price" + "," + "time" + ")" +
+                                "VALUES(?,?,?)";
+                        PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
+                        try {
+                            preparedStatement.setString(1, n);
+                            preparedStatement.setString(2, String.valueOf(price));
+                            preparedStatement.setString(3, textToTime.getText());
+                            preparedStatement.executeUpdate();
+
+                        } catch (Exception e) {
+                            e.getMessage();
+                        }
+                    } else if (idd != Integer.parseInt(id)) {
+                        Shake an = new Shake(textToService);
+                        an.playAnim();
                     }
                 }
+
+            /*
                 String insert = "INSERT INTO " + "doc" + " (" +
                         "name" + "," + "price" + "," + "time" + ")"  +
                         "VALUES(?,?,?)";
@@ -110,12 +131,19 @@ try{
                 } catch (Exception e){
                 e.getMessage();
             }
-            String d = "You signed up successfully";
-            JOptionPane.showMessageDialog(null, d, "Congratulate!", JOptionPane.PLAIN_MESSAGE);
-            change(buttonToOrderInOrder,"ser");
-        });
 
-    }
+             */
+                //String d = "You signed up successfully";
+                //JOptionPane.showMessageDialog(null, d, "Congratulate!", JOptionPane.PLAIN_MESSAGE);
+                //change(buttonToOrderInOrder,"ser");
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        });
+}
     public void change(Button button, String url) {
         button.getScene().getWindow().hide();
         FXMLLoader loader = new FXMLLoader();
